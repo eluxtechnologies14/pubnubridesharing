@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>2 Col Portfolio - Start Bootstrap Template</title>
+    <title>PN | Ride Sharing</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -39,10 +39,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="#">RideShare</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="#">About</a>
@@ -54,7 +54,7 @@
                         <a href="#">Contact</a>
                     </li>
                 </ul>
-            </div>
+            </div> -->
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -66,8 +66,8 @@
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Page Heading
-                    <small>Secondary Text</small>
+                <h1 class="page-header">Ride Sharing
+                    <small>powered by PubNub</small>
                 </h1>
             </div>
         </div>
@@ -76,13 +76,60 @@
         <!-- Projects Row -->
         <div class="row">
             <div class="col-md-6 portfolio-item">
-                <a href="#">
+               <!--  <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
+                </a> -->
                 <h3>
-                    <a href="#">Project One</a>
+                    <a href="#">Enter Ride Request </a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                    <form class="form-horizontal">
+                            <fieldset>
+
+                            <!-- Form Name -->
+                            <!-- <legend>Form Name</legend> -->
+
+                            <!-- Select Basic -->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="selectDropoff">Destination Dropoff</label>
+                              <div class="col-md-5">
+                                <select id="selectDropoff" name="selectDropoff" class="form-control">
+                                  <option value="1">Option one</option>
+                                  <option value="2">Option two</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <!-- Select Basic -->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="selectDest">Destination Pickup</label>
+                              <div class="col-md-5">
+                                <select id="selectDest" name="selectDest" class="form-control">
+                                  <option value="1">Option one</option>
+                                  <option value="2">Option two</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="texttime">Time Needed</label>  
+                              <div class="col-md-5">
+                              <input id="texttime" name="texttime" type="text" placeholder="Enter Time For Pickup" class="form-control input-md">
+                                
+                              </div>
+                            </div>
+
+                            <!-- Button -->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="Button">Single Button</label>
+                              <div class="col-md-4">
+                                <button id="Button" name="Button" class="btn btn-success">Button</button>
+                              </div>
+                            </div>
+
+                            </fieldset>
+                            </form>
+
             </div>
             <div class="col-md-6 portfolio-item">
                 <a href="#">
@@ -97,7 +144,7 @@
         <!-- /.row -->
 
         <!-- Projects Row -->
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-6 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
@@ -116,11 +163,11 @@
                 </h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
-        </div>
+        </div> -->
         <!-- /.row -->
 
         <!-- Projects Row -->
-        <div class="row">
+       <!--  <div class="row">
             <div class="col-md-6 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
@@ -139,40 +186,12 @@
                 </h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
-        </div>
+        </div> -->
         <!-- /.row -->
 
         <hr>
 
-        <!-- Pagination -->
-        <div class="row text-center">
-            <div class="col-lg-12">
-                <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- /.row -->
+        
 
         <hr>
 
@@ -180,7 +199,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Ride Sharing</p>
                 </div>
             </div>
             <!-- /.row -->
