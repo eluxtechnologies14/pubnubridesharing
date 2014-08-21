@@ -250,7 +250,7 @@
              channel : "rideshare",
              callback : function(m) { 
                             console.log("recd", m);
-                            $("#PNub").innerHTML = $("#PNub").innerHTML + "<tr><td>Name</td><td>" + m.to + "</td><td>" + m.from + "</td><td></td></tr>"; },
+                            $("#PNub").append("<tr><td>Name</td><td>" + m.to + "</td><td>" + m.from + "</td><td>" + m.time + "</td><td></td></tr>"); },
              connect: function(m) { console.log("I'm subscribed!")}
              });
             console.log("I'm subscribing...");
