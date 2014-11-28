@@ -26,7 +26,7 @@ define(['animation_manager', 'ELUX Reservations'], function (AnimationManager, E
           draggable: true
         };
 
-        this.map = new google.maps.Map(document.querySelector('#map-canvas'), mapOptions);
+        map = new google.maps.Map(document.querySelector('#map-canvas'), mapOptions);
         
         AnimationManager.initialize();
         DispatchApp.initialize();
@@ -57,7 +57,7 @@ define(['animation_manager', 'ELUX Reservations'], function (AnimationManager, E
                 onBusUpdate(data);
               }
             }
-          }).bind(this)
+          }).bind()
         });
       },
 
