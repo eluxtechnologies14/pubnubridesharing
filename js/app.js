@@ -1,4 +1,4 @@
-define(['animation_manager', 'dispatch_app'], function (AnimationManager, DispatchApp) {
+define(['animation_manager', 'ELUX Reservations'], function (AnimationManager, ELUX Reservations) {
     'use strict';
 
     function easeInOutQuad(t, b, c, d) {
@@ -12,18 +12,18 @@ define(['animation_manager', 'dispatch_app'], function (AnimationManager, Dispat
         this.pubnub = PUBNUB.init({
           subscribe_key: 'sub-c-ca807c1a-7388-11e4-b043-02ee2ddab7fe'
         });
-        this.buses = {};
-        this.listenForBusUpdates();
+        this.vehicles = {};
+        this.listenUpdates();
 
         var mapOptions = {
           center: new google.maps.LatLng(37.774682, -122.419710),      
           zoom: 15,
           disableDefaultUI: true,
-          scrollwheel: false,
+          scrollwheel: true,
           navigationControl: false,
           mapTypeControl: false,
           scaleControl: false,
-          draggable: false
+          draggable: true
         };
 
         this.map = new google.maps.Map(document.querySelector('#map-canvas'), mapOptions);
