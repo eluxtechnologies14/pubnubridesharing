@@ -9,11 +9,11 @@ define(['animation_manager', 'ELUX Reservations'], function (AnimationManager, E
 
     return {
       init: function () {
-        this.pubnub = PUBNUB.init({
+       pubnub = PUBNUB.init({
           subscribe_key: 'sub-c-ca807c1a-7388-11e4-b043-02ee2ddab7fe'
         });
-        this.vehicles = {};
-        this.listenUpdates();
+        vehicles = {};
+        listenUpdates();
 
         var mapOptions = {
           center: new google.maps.LatLng(37.774682, -122.419710),      
@@ -37,14 +37,14 @@ define(['animation_manager', 'ELUX Reservations'], function (AnimationManager, E
       },
 
       listenForBusUpdates: function () {
-        this.pubnub.subscribe({
-          channel: 'ELUX Reservations',
-          callback: this.onBusUpdate.bind(this)
+        pubnub.subscribe({
+          channel: 'location_update',
+          callback: onBusUpdate.bind()
         });
 
         // Get the history of the last N publishes so the page is not blank
-        this.pubnub.history ({
-          channel: 'ELUX Reservations',
+        pubnub.history ({
+          channel: 'history',
           count: 50,
           reverse: false,
           error: function(){
@@ -54,7 +54,7 @@ define(['animation_manager', 'ELUX Reservations'], function (AnimationManager, E
             if (message[0]) {
               for (var i = 0; i < message[0].length; i++) {
                 var data = message[0][i];
-                this.onBusUpdate(data);
+                onBusUpdate(data);
               }
             }
           }).bind(this)
@@ -63,15 +63,15 @@ define(['animation_manager', 'ELUX Reservations'], function (AnimationManager, E
 
       onBusUpdate: function (data) {
         data.id = data.id.toString();
-        var bus = this.buses[data.id];
+        var bus = buses[data.id];
 
         var latLng = new google.maps.LatLng(data.lat, data.lon);
 
         // Create new marker if it does not exist
         if (!bus) {
-          bus = this.createNewBus(data.id, latLng);
+          bus = createNewBus(data.id, latLng);
         } else {
-          this.animateToPosition(this.buses[data.id], latLng);
+          animateToPosition(buses[data.id], latLng);
         }
       },
 
@@ -105,15 +105,15 @@ define(['animation_manager', 'ELUX Reservations'], function (AnimationManager, E
       createNewBus: function (id, latLng) {
         var image = 'static/taxiicon.png';
 
-        this.buses[id] = new google.maps.Marker({
+        buses[id] = new google.maps.Marker({
           position: latLng,
-          map: this.map,
+          map: map,
           title: "Bus: " + id,
           icon: image,
           animation: google.maps.Animation.DROP
         });
 
-        return this.buses[id];
+        return buses[id];
       }
     };
 });
