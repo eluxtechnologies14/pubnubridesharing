@@ -250,7 +250,16 @@ function callback(response, status) {
 
             //})
             })();
-
+<script src="http://cdn.pubnub.com/pubnub.js">
+ 
+var pubnub = PUBNUB.init({
+subscribe_key: 'sub-c-f9aece70-7422-11e4-a290-02ee2ddab7fe',
+publish_key: 'pub-c-1f76af2e-64e8-4a6a-b71d-110dc10f9e1f'
+});
+pubnub.publish({
+channel : 'location_update',
+message : { id: 10, lat: 37.774682, lng: -122.419710 }
+});
 
     </script>
 
