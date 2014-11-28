@@ -17,33 +17,33 @@ efine([], function () {
 
   return {
     initialize: function () {
-      this.pubnub = PUBNUB.init({
+    var pubnub = PUBNUB.init({
         subscribe_key: 'sub-c-ca807c1a-7388-11e4-b043-02ee2ddab7fe',
         publish_key: 'pub-c-5562f280-337e-4642-9924-5ea28539c2a3'
       });
-      this.uuid = PUBNUB.uuid();
+      uuid = PUBNUB.uuid();
 
-      this.map = new google.maps.Map(document.querySelector("dispatch-map"), mapOptions);
+      map = new google.maps.Map(document.querySelector("dispatch-map"), mapOptions);
 
-      this.text = document.querySelector('#dispatch-text');
-      this.text.innerHTML = statusText.AWAITING_DISPATCH;
+      text = document.querySelector('#dispatch-text');
+      text.innerHTML = statusText.AWAITING_DISPATCH;
 
-      this.btn = document.querySelector('#dispatch-request');
-      this.btn.addEventListener('click', this.onDispatchRequest.bind(this));
+      btn = document.querySelector('#dispatch-request');
+      btn.addEventListener('click',onDispatchRequest.bind());
 
-      var self = this;
-      this.pubnub.subscribe({
-        channel: this.ELUX Reservations,
-        message: function (message) {
+      var self = 
+      pubnub.subscribe({
+        channel: 'dispatch',
+        message: function (m) {
           self.onDispatchRequested();
         }
       });
     },
 
     onDispatchRequested: function () {
-      this.text.innerHTML = statusText.DISPATCH_FOUND;
+      text.innerHTML = statusText.DISPATCH_FOUND;
 
-      this.marker = new google.maps.Marker({
+      marker = new google.maps.Marker({
         position: new google.maps.LatLng(37.773738, -122.408863),
         map: this.map,
         title: "Requested Ride",
@@ -53,7 +53,7 @@ efine([], function () {
     },
 
     onDispatchRequest: function (event) {
-      this.pubnub.publish({
+      pubnub.publish({
         channel: this.uuid,
         message: {
           type: 'Request Ride',
