@@ -42,17 +42,16 @@
                 </button>
                 <a class="navbar-brand" href="#">E-LUX</a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             class="collapse navbar-collapse" id="Pricing">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="#">Pricing</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="#">Drivers</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="#">Map</a>
                     </li>
                 </ul>
             </div> -->
@@ -152,7 +151,7 @@
                       <th>Name</th>
                       <th>DropOff</th>
                       <th>PickUp</th>
-                      <th>TIme</th>
+                      <th>Time</th>
                       <th>Status</th>                                          
                   </tr>
               </thead>   
@@ -195,7 +194,7 @@
              channel : "ELUX Reservations",
              callback : function(m) { 
                             console.log("recd", m);
-                            $("#PNub").append("<tr><td>Name</td><td>" + m.to + "</td><td>" + m.from + "</td><td>" + m.time + "</td><td></td></tr>"); },
+                            $("#PNub").append("<tr><td>ELUX Reservations</td><td>" + m.to + "</td><td>" + m.from + "</td><td>" + m.time + "</td><td></td></tr>"); },
              connect: function(m) { console.log("I'm subscribed!")}
              });
             console.log("I'm subscribing...");
