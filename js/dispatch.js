@@ -3,11 +3,11 @@ efine([], function () {
     center: new google.maps.LatLng(37.773572, -122.409710),
     zoom: 15,
     disableDefaultUI: true,
-    scrollwheel: false,
+    scrollwheel: true,
     navigationControl: false,
     mapTypeControl: false,
     scaleControl: false,
-    draggable: false
+    draggable: true
   };
 
   var statusText = {
@@ -23,7 +23,7 @@ efine([], function () {
       });
       this.uuid = PUBNUB.uuid();
 
-      this.map = new google.maps.Map(document.querySelector("#dispatch-map"), mapOptions);
+      this.map = new google.maps.Map(document.querySelector("dispatch-map"), mapOptions);
 
       this.text = document.querySelector('#dispatch-text');
       this.text.innerHTML = statusText.AWAITING_DISPATCH;
