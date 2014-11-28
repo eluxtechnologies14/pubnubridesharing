@@ -38,13 +38,13 @@ define(['animation_manager', 'ELUX Reservations'], function (AnimationManager, E
 
       listenForBusUpdates: function () {
         this.pubnub.subscribe({
-          channel: 'test_bus',
+          channel: 'ELUX Reservations',
           callback: this.onBusUpdate.bind(this)
         });
 
         // Get the history of the last N publishes so the page is not blank
         this.pubnub.history ({
-          channel: 'test_bus',
+          channel: 'ELUX Reservations',
           count: 50,
           reverse: false,
           error: function(){
