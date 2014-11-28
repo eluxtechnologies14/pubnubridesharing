@@ -45,7 +45,7 @@ efine([], function () {
 
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(37.773738, -122.408863),
-        map: this.map,
+        map: map,
         title: "Requested Ride",
         icon: 'static/taxiicon.png',
         animation: google.maps.Animation.DROP
@@ -54,7 +54,7 @@ efine([], function () {
 
     onDispatchRequest: function (event) {
       pubnub.publish({
-        channel: this.uuid,
+        channel: 'request_ride',
         message: {
           type: 'Request Ride',
           lat: 10,
