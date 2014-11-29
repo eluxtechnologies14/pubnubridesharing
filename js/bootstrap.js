@@ -102,7 +102,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     if (e) e.preventDefault()
 
     if (!$parent.length) {
-      $parent = $hasClass('alert') ? $this : $this.parent()
+      $parent = $hasClass('alert') ? $this : .parent()
     }
 
     $parent.trigger(e = $.Event('close.bs.alert'))
@@ -939,26 +939,26 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
       $element
         .one('bsTransitionEnd', $.proxy(this.hideModal, this))
         .emulateTransitionEnd(300) :
-      this.hideModal()
+      hideModal()
   }
 
   Modal.prototype.enforceFocus = function () {
     $(document)
       .off('focusin.bs.modal') // guard against infinite focus loop
       .on('focusin.bs.modal', $.proxy(function (e) {
-        if (this.$element[0] !== e.target && !this.$element.has(e.target).length) {
-          this.$element.trigger('focus')
+        if ($element[0] !== e.target && !$element.has(e.target).length) {
+          $element.trigger('focus')
         }
       }, this))
   }
 
   Modal.prototype.escape = function () {
-    if (this.isShown && this.options.keyboard) {
-      this.$element.on('keyup.dismiss.bs.modal', $.proxy(function (e) {
-        e.which == 27 && this.hide()
+    if (isShown && options.keyboard) {
+      $element.on('keyup.dismiss.bs.modal', $.proxy(function (e) {
+        e.which == 27 && hide()
       }, this))
-    } else if (!this.isShown) {
-      this.$element.off('keyup.dismiss.bs.modal')
+    } else if (!isShown) {
+      $element.off('keyup.dismiss.bs.modal')
     }
   }
 
